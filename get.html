@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SS Study download</title>
+<style>
+  body { margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 16px; box-sizing: border-box;
+         background: #155e66; color: #fff; font: 16px/1.5 system-ui, sans-serif; text-align: center; }
+  h1 { margin: 0 0 8px; font-size: 1.8rem; }
+  a { color: #ffd27a; }
+</style>
+</head>
+<body>
+<main>
+  <h1>SS Study</h1>
+  <p>Starting the download&hellip;</p>
+  <p><a id="a" href="SS-Study.apk">Tap here if it doesn't start</a></p>
+</main>
+<script>
+/* The app's "New app version" button opens this page (version.json "apkFile"). It downloads the APK from the newest
+   GitHub release (GitHub counts those downloads) when that release is this version (tag build-<apk>); otherwise,
+   or if anything fails, the copy next to this page. */
+(function () {
+  var done = false, local = 'SS-Study.apk';
+  function go(url) { if (done) return; done = true; document.getElementById('a').href = url; location.replace(url); }
+  setTimeout(function () { go(local); }, 4000);
+  Promise.all([
+    fetch('version.json?t=' + Date.now(), { cache: 'no-store' }).then(function (r) { return r.json(); }),
+    fetch('https://api.github.com/repos/Kewlsky/ss-study/releases/latest', { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : {}; })
+  ]).then(function (x) {
+    var rel = x[1] || {}, apk = (rel.assets || []).filter(function (f) { return f.name === 'SS-Study.apk'; })[0];
+    go(rel.tag_name === 'build-' + x[0].apk && apk ? apk.browser_download_url : local);
+  }).catch(function () { go(local); });
+})();
+</script>
+</body>
+</html>
