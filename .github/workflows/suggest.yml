@@ -1,0 +1,21 @@
+# Every 5 minutes (the shortest GitHub allows): send users' new suggestions (saved in the Firebase database) to the creator's phone only.
+# Secrets: FCM_SERVICE_ACCOUNT (the Firebase key) and CREATOR_TOPIC (the creator's private topic). Neither is in any file.
+name: Send suggestions to the creator
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+concurrency:
+  group: suggest
+  cancel-in-progress: false
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Send new suggestions
+        env:
+          FCM_SERVICE_ACCOUNT: ${{ secrets.FCM_SERVICE_ACCOUNT }}
+          CREATOR_TOPIC: ${{ secrets.CREATOR_TOPIC }}
+        run: python3 .github/suggest.py
