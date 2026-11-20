@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lower Limb OSPE</title>
+<meta name="description" content="Lower limb OSPE mock exam: 61 stations (41 MCQ + 20 written) on nerves, actions and spotting.">
+<meta property="og:title" content="Lower Limb OSPE">
+<meta property="og:description" content="61 stations · 41 MCQ + 20 written · nerves, actions and spotting. Easy to really hard.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://kewlsky.github.io/ss-study/lower-limb/img/femA.jpg">
+<meta name="theme-color" content="#47389a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,650;12..96,750&family=IBM+Plex+Mono:wght@500&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f5f3f8; --surface: #ffffff; --surface-2: #ece8f2; --ink: #211a30; --ink-soft: #5a5070; --line: #dad3e5;
+  --eosin: #b02f5c; --hema: #47389a; --on-hema: #ffffff; --glass: #fbfaf7;
+  --ok: #1f7a55; --ok-bg: #e2f3ea; --bad: #b3261e; --bad-bg: #fbe6e4; --warn: #8a5a00; --warn-bg: #fbefd6;
+  --e: #1f7a55; --e-bg: #e2f3ea; --m: #8a5a00; --m-bg: #fbefd6; --h: #b02f5c; --h-bg: #fbe7ef;
+  --shade: rgba(20, 14, 30, .9);
+  --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #131019; --surface: #1c1724; --surface-2: #262031; --ink: #ece7f4; --ink-soft: #b2a9c3; --line: #362e44;
+    --eosin: #f17ba1; --hema: #aa9df2; --on-hema: #15111d; --glass: #f3f1ec;
+    --ok: #5fcf9b; --ok-bg: #16302a; --bad: #ff8a80; --bad-bg: #3a1c1f; --warn: #f2c063; --warn-bg: #342812;
+    --e: #5fcf9b; --e-bg: #16302a; --m: #f2c063; --m-bg: #342812; --h: #f17ba1; --h-bg: #3a1a28;
+    --shade: rgba(5, 3, 9, .94); color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #131019; --surface: #1c1724; --surface-2: #262031; --ink: #ece7f4; --ink-soft: #b2a9c3; --line: #362e44;
+  --eosin: #f17ba1; --hema: #aa9df2; --on-hema: #15111d; --glass: #f3f1ec;
+  --ok: #5fcf9b; --ok-bg: #16302a; --bad: #ff8a80; --bad-bg: #3a1c1f; --warn: #f2c063; --warn-bg: #342812;
+  --e: #5fcf9b; --e-bg: #16302a; --m: #f2c063; --m-bg: #342812; --h: #f17ba1; --h-bg: #3a1a28;
+  --shade: rgba(5, 3, 9, .94); color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 1.06rem; line-height: 1.55; min-height: 100vh; }
+.wrap { max-width: 720px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+h1, h2, h3 { font-family: var(--font-display); line-height: 1.15; margin: 0; text-wrap: balance; }
+p { margin: 0; }
+button { font: inherit; color: inherit; }
+[hidden] { display: none !important; }
+:focus-visible { outline: 3px solid var(--hema); outline-offset: 2px; }
+.mono { font-family: var(--font-mono); font-size: .74rem; letter-spacing: .06em; text-transform: uppercase; }
+
+/* bar */
+.bar { position: sticky; top: 0; z-index: 5; background: var(--surface); border-bottom: 1px solid var(--line); padding-top: env(safe-area-inset-top, 0px); }
+.bar-in { display: flex; align-items: center; gap: 10px; min-height: 56px; }
+.brand { flex: 1 1 auto; min-width: 0; font-family: var(--font-display); font-weight: 750; font-size: 1.12rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; background: none; border: 0; padding: 0; text-align: left; cursor: pointer; }
+.brand span { color: var(--eosin); }
+.pill { flex: none; border: 1px solid var(--line); background: var(--surface-2); border-radius: 999px; padding: 5px 12px; font: 600 .9rem var(--font-body); cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
+.clock { font-family: var(--font-mono); font-size: .9rem; font-variant-numeric: tabular-nums; }
+.clock.low { color: var(--bad); border-color: var(--bad); }
+.track { height: 4px; background: var(--surface-2); }
+.track i { display: block; height: 100%; width: 0; background: var(--hema); transition: width .3s; }
+
+/* buttons */
+.btn { font-weight: 700; font-size: 1rem; border: 1px solid var(--ink); background: var(--ink); color: var(--bg); border-radius: 12px; padding: 12px 18px; cursor: pointer; line-height: 1.2; min-height: 48px; }
+.btn.ghost { background: transparent; color: var(--ink); border-color: var(--line); }
+.btn.accent { background: var(--hema); border-color: var(--hema); color: var(--on-hema); }
+.btn:disabled { opacity: .45; cursor: default; }
+.btn:not(:disabled):active { transform: scale(.98); }
+.row { display: flex; gap: 10px; flex-wrap: wrap; }
+.row > .btn { flex: 1 1 140px; }
+
+/* start */
+.hero { padding: 26px 0 8px; }
+.hero h1 { font-size: clamp(2rem, 8vw, 2.9rem); font-weight: 750; letter-spacing: -.01em; }
+.hero h1 span { color: var(--eosin); }
+.hero p { color: var(--ink-soft); margin-top: 10px; max-width: 34em; }
+.facts { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.fact { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 8px 12px; }
+.fact b { font-family: var(--font-display); font-size: 1.25rem; display: block; line-height: 1.1; }
+.fact small { color: var(--ink-soft); font-size: .82rem; }
+.box { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 16px; margin-top: 16px; }
+.box h3 { font-size: 1.02rem; margin-bottom: 10px; }
+.seg { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 8px; }
+.seg button { text-align: left; border: 1.5px solid var(--line); background: var(--surface); border-radius: 12px; padding: 10px 12px; cursor: pointer; min-height: 48px; }
+.seg button b { display: block; font-size: .98rem; }
+.seg button small { color: var(--ink-soft); font-size: .84rem; line-height: 1.3; display: block; }
+.seg button[aria-pressed="true"] { border-color: var(--hema); background: color-mix(in srgb, var(--hema) 9%, var(--surface)); box-shadow: inset 0 0 0 1px var(--hema); }
+.note { color: var(--ink-soft); font-size: .9rem; margin-top: 12px; }
+.start-actions { margin: 18px 0 40px; display: grid; gap: 10px; }
+
+/* station */
+.station { padding: 16px 0 120px; }
+.meta { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-bottom: 10px; }
+.chip { display: inline-flex; align-items: center; border-radius: 999px; padding: 2px 10px; font: 500 .72rem var(--font-mono); letter-spacing: .05em; text-transform: uppercase; border: 1px solid var(--line); color: var(--ink-soft); background: var(--surface); }
+.chip.e { color: var(--e); background: var(--e-bg); border-color: transparent; }
+.chip.m { color: var(--m); background: var(--m-bg); border-color: transparent; }
+.chip.h { color: var(--h); background: var(--h-bg); border-color: transparent; }
+.num { font-family: var(--font-display); font-weight: 750; font-size: 1.05rem; margin-right: 4px; }
+.stem { font-size: 1.22rem; font-weight: 650; }
+figure { margin: 14px 0 4px; background: var(--glass); border: 1px solid var(--line); border-radius: 16px; padding: 10px; display: flex; justify-content: center; }
+.pic { position: relative; display: inline-block; line-height: 0; cursor: zoom-in; max-width: 100%; }
+.pic img { display: block; max-width: 100%; max-height: 46vh; width: auto; height: auto; border-radius: 6px; }
+.pic svg { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; }
+.zoomhint { text-align: center; color: var(--ink-soft); font-size: .8rem; margin-bottom: 8px; }
+.opts { display: grid; gap: 10px; margin-top: 14px; }
+.opt { display: flex; align-items: center; gap: 12px; text-align: left; width: 100%; border: 1.5px solid var(--line); background: var(--surface); border-radius: 14px; padding: 12px 14px; cursor: pointer; min-height: 54px; }
+.opt .k { flex: none; width: 30px; height: 30px; border-radius: 9px; display: grid; place-items: center; font: 700 .9rem var(--font-display); background: var(--surface-2); }
+.opt[aria-pressed="true"] { border-color: var(--hema); box-shadow: inset 0 0 0 1px var(--hema); }
+.opt[aria-pressed="true"] .k { background: var(--hema); color: var(--on-hema); }
+.opt.right { border-color: var(--ok); background: var(--ok-bg); box-shadow: inset 0 0 0 1px var(--ok); }
+.opt.right .k { background: var(--ok); color: #fff; }
+.opt.wrong { border-color: var(--bad); background: var(--bad-bg); box-shadow: inset 0 0 0 1px var(--bad); }
+.opt.wrong .k { background: var(--bad); color: #fff; }
+.opt:disabled { cursor: default; color: var(--ink); opacity: 1; }
+.parts { display: grid; gap: 14px; margin-top: 14px; }
+.part label { display: flex; gap: 10px; align-items: baseline; font-weight: 600; margin-bottom: 6px; }
+.part .pn { flex: none; font: 700 .85rem var(--font-display); width: 26px; height: 26px; border-radius: 8px; display: grid; place-items: center; background: var(--surface-2); }
+.part input { width: 100%; font: inherit; font-size: 1.05rem; padding: 12px 14px; border-radius: 12px; border: 1.5px solid var(--line); background: var(--surface); color: var(--ink); min-height: 50px; }
+.part input:focus { border-color: var(--hema); outline: none; box-shadow: 0 0 0 3px color-mix(in srgb, var(--hema) 25%, transparent); }
+.part.ok input { border-color: var(--ok); background: var(--ok-bg); }
+.part.bad input { border-color: var(--bad); background: var(--bad-bg); }
+.verdict { margin-top: 6px; font-size: .95rem; display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; }
+.verdict .ok { color: var(--ok); font-weight: 700; }
+.verdict .bad { color: var(--bad); font-weight: 700; }
+.linkbtn { border: 0; background: none; padding: 2px 0; color: var(--hema); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; font-size: .92rem; }
+.why { margin-top: 14px; border-radius: 14px; padding: 12px 14px; background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--hema); }
+.why b.t { display: block; font-family: var(--font-display); margin-bottom: 4px; }
+.why.ok { border-left-color: var(--ok); } .why.bad { border-left-color: var(--bad); }
+.why .ref { color: var(--ink-soft); font-size: .82rem; margin-top: 6px; }
+.dock { position: fixed; left: 0; right: 0; bottom: 0; z-index: 6; background: color-mix(in srgb, var(--surface) 94%, transparent); border-top: 1px solid var(--line); padding-bottom: env(safe-area-inset-bottom, 0px); backdrop-filter: saturate(1.2); }
+.dock .wrap { display: flex; gap: 10px; padding-top: 10px; padding-bottom: 10px; }
+.dock .btn { flex: 1 1 0; }
+.dock .btn.back { flex: 0 0 auto; padding-inline: 16px; }
+
+/* station map */
+.sheet { position: fixed; inset: 0; z-index: 20; background: var(--shade); display: flex; align-items: flex-end; justify-content: center; }
+.sheet-in { background: var(--surface); width: 100%; max-width: 720px; max-height: 86vh; overflow: auto; border-radius: 20px 20px 0 0; padding: 16px max(16px, env(safe-area-inset-left, 0px)) calc(20px + env(safe-area-inset-bottom, 0px)); }
+.sheet-in h3 { font-size: 1.15rem; display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(46px, 1fr)); gap: 8px; }
+.grid button { aspect-ratio: 1; border: 1.5px solid var(--line); background: var(--surface); border-radius: 10px; font: 700 .95rem var(--font-display); cursor: pointer; }
+.grid button.done { background: var(--surface-2); border-color: var(--ink-soft); }
+.grid button.cur { border-color: var(--hema); box-shadow: inset 0 0 0 1.5px var(--hema); }
+.grid button.r { background: var(--ok-bg); border-color: var(--ok); color: var(--ok); }
+.grid button.w { background: var(--bad-bg); border-color: var(--bad); color: var(--bad); }
+.legend { display: flex; gap: 14px; flex-wrap: wrap; color: var(--ink-soft); font-size: .85rem; margin-top: 12px; }
+.x { border: 1px solid var(--line); background: var(--surface-2); width: 38px; height: 38px; border-radius: 10px; cursor: pointer; font-size: 1.1rem; }
+.dialog { position: fixed; inset: 0; z-index: 30; background: var(--shade); display: grid; place-items: center; padding: 16px; }
+.dialog-in { background: var(--surface); border-radius: 18px; padding: 20px; max-width: 420px; width: 100%; }
+.dialog-in p { margin: 8px 0 16px; color: var(--ink-soft); }
+
+/* lightbox */
+.lb { position: fixed; inset: 0; z-index: 40; background: #0c0a10; overflow: auto; -webkit-overflow-scrolling: touch; }
+.lb .pic { cursor: zoom-out; display: block; margin: 0 auto; width: max-content; max-width: none; padding: 56px 8px 24px; }
+.lb .pic img { max-height: none; max-width: none; width: min(100vw - 16px, 1100px); background: #fff; }
+.lb .x { position: fixed; top: calc(10px + env(safe-area-inset-top, 0px)); right: 12px; z-index: 41; background: #fff; color: #111; border: 0; }
+
+/* results */
+.res { padding: 22px 0 60px; }
+.score { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+.ring { --p: 0; width: 120px; height: 120px; border-radius: 50%; background: conic-gradient(var(--hema) calc(var(--p) * 1%), var(--surface-2) 0); display: grid; place-items: center; flex: none; }
+.ring div { width: 94px; height: 94px; border-radius: 50%; background: var(--bg); display: grid; place-items: center; font: 750 1.6rem var(--font-display); }
+.score h1 { font-size: 1.8rem; }
+.score p { color: var(--ink-soft); margin-top: 4px; }
+.bars { display: grid; gap: 10px; margin-top: 18px; }
+.barrow { display: grid; grid-template-columns: 92px 1fr 72px; gap: 10px; align-items: center; font-size: .95rem; }
+.barrow .b { height: 10px; border-radius: 99px; background: var(--surface-2); overflow: hidden; }
+.barrow .b i { display: block; height: 100%; border-radius: 99px; }
+.barrow span:last-child { text-align: right; font-variant-numeric: tabular-nums; color: var(--ink-soft); }
+.list { margin-top: 18px; display: grid; gap: 8px; }
+.item { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+.item > button { width: 100%; display: flex; gap: 10px; align-items: center; text-align: left; background: none; border: 0; padding: 12px 14px; cursor: pointer; }
+.mark { flex: none; width: 28px; height: 28px; border-radius: 8px; display: grid; place-items: center; font-weight: 800; font-size: .9rem; }
+.mark.r { background: var(--ok-bg); color: var(--ok); } .mark.w { background: var(--bad-bg); color: var(--bad); } .mark.p { background: var(--warn-bg); color: var(--warn); }
+.item .s { flex: 1 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.item .pts { flex: none; color: var(--ink-soft); font-size: .85rem; font-variant-numeric: tabular-nums; }
+.item .body { padding: 0 14px 14px; border-top: 1px solid var(--line); }
+.item .body .station { padding: 12px 0 0; }
+.filters { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 22px; }
+.filters button { border: 1.5px solid var(--line); background: var(--surface); border-radius: 999px; padding: 6px 14px; font-weight: 600; cursor: pointer; }
+.filters button[aria-pressed="true"] { border-color: var(--hema); color: var(--hema); }
+footer { color: var(--ink-soft); font-size: .82rem; text-align: center; padding: 10px 0 30px; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<header class="bar"><div class="wrap bar-in">
+  <button class="brand" id="home" aria-label="Start page">Lower Limb <span>OSPE</span></button>
+  <button class="pill clock" id="clock" hidden aria-live="off"></button>
+  <button class="pill" id="mapbtn" hidden aria-label="All stations"></button>
+</div><div class="track"><i id="track"></i></div></header>
+<main class="wrap" id="app"></main>
+<div id="layer"></div>
+<script>
+const DATA = {"q":[{"t":"m","lv":"e","sec":"Hip bone","stem":"The coloured part of the hip bone at the arrow is the:","o":["Ischium","Ilium","Pubis","Sacrum"],"why":"The hip bone is three bones joined at the acetabulum: ilium on top, pubis in front, ischium at the back and bottom. The arrow is on the lower back part, so it is the ischium.","ref":"p.2","pic":{"src":"img/tri.jpg","w":420,"h":560,"a":[[205.0,470.0,"r"]]},"id":1},{"t":"m","lv":"e","sec":"Hip bone","stem":"Identify the opening at the arrow.","o":["Obturator foramen","Acetabulum","Greater sciatic notch","Lesser sciatic notch"],"why":"The big hole under the acetabulum, framed by the pubis and the ischium, is the obturator foramen. The acetabulum is the cup above it.","ref":"p.2–3","pic":{"src":"img/pelvis.jpg","w":900,"h":675,"a":[[282.8,432.0,"b"]]},"id":2},{"t":"m","lv":"e","sec":"Hip bone","stem":"Which part of the hip bone do you sit on?","o":["Ischial tuberosity","Ischial spine","Pubic tubercle","Iliac crest"],"why":"Your notes mark the ischial tuberosity as the sitting area (مكان الجلوس).","ref":"p.4","pic":null,"id":3},{"t":"m","lv":"m","sec":"Hip bone","stem":"Lateral view of the hip bone. Identify the spine at the arrow.","o":["Anterior superior iliac spine (ASIS)","Anterior inferior iliac spine (AIIS)","Posterior superior iliac spine (PSIS)","Posterior inferior iliac spine (PIIS)"],"why":"Front border of the ilium = the two anterior spines. The upper one, at the front end of the iliac crest, is the ASIS; the AIIS is the smaller one below it.","ref":"p.3","pic":{"src":"img/hipL.jpg","w":530,"h":480,"a":[[472.0,186.0,"r"]]},"id":4},{"t":"m","lv":"h","sec":"Hip bone","stem":"Lateral view of the hip bone. Identify the structure at the arrow.","o":["Posterior inferior iliac spine (PIIS)","Posterior superior iliac spine (PSIS)","Greater sciatic notch","Ischial spine"],"why":"Back border of the ilium, from top to bottom: PSIS, then PIIS, then the deep greater sciatic notch.","ref":"p.3","pic":{"src":"img/hipL.jpg","w":530,"h":480,"a":[[138.0,360.0,"l"]]},"id":5},{"t":"w","lv":"m","sec":"Hip bone","stem":"Lateral view of the hip bone.","parts":[["Name the notch at the arrow.",["greater sciatic notch","greater sciatic"]]],"why":"The deep notch on the back border, under the PIIS, is the greater sciatic notch. The lesser sciatic notch is lower down, on the ischium, under the ischial spine.","ref":"p.3–4","pic":{"src":"img/hipL.jpg","w":530,"h":480,"a":[[228.0,370.0,"bl",110.0]]},"id":6},{"t":"m","lv":"h","sec":"Hip bone","stem":"Medial view of the ilium. Identify the surface at the arrow.","o":["Auricular surface","Iliac tuberosity","Wing (ala) of the ilium","Greater sciatic notch"],"why":"Medial view: the ear-shaped surface at the back is the auricular surface (it joins the sacrum). The rough area just above it is the iliac tuberosity.","ref":"p.3","pic":{"src":"img/hipM.jpg","w":460,"h":403,"a":[[360.0,285.0,"b"]]},"id":7},{"t":"m","lv":"m","sec":"Hip bone","stem":"Identify the structure at the arrow (the pubis is coloured green).","o":["Pubic tubercle","Pubic crest","Obturator crest","Ischial spine"],"why":"The small knob at the front of the pubis, at the end of the superior pubic ramus, is the pubic tubercle.","ref":"p.2–3","pic":{"src":"img/pubis.jpg","w":798,"h":416,"a":[[306.0,256.0,"r"]]},"id":8},{"t":"w","lv":"m","sec":"Hip bone","stem":"The ischium (coloured blue).","parts":[["Name the pointed projection at the arrow.",["ischial spine","spine of ischium"]]],"why":"The pointed projection on the back border of the ischium is the ischial spine. Above it is the greater sciatic notch, below it the lesser sciatic notch.","ref":"p.4","pic":{"src":"img/ischB.jpg","w":558,"h":614,"a":[[170.0,152.0,"l"]]},"id":9},{"t":"m","lv":"h","sec":"Hip bone","stem":"The ischium (coloured blue). Identify the notch at the arrow.","o":["Lesser sciatic notch","Greater sciatic notch","Obturator foramen","Acetabular notch"],"why":"Under the ischial spine comes the lesser sciatic notch. The greater sciatic notch is above the spine.","ref":"p.4","pic":{"src":"img/ischB.jpg","w":558,"h":614,"a":[[200.0,238.0,"l"]]},"id":10},{"t":"m","lv":"h","sec":"Hip bone","stem":"The upper quadrangular area of the ischial tuberosity is divided by an oblique ridge into:","o":["An upper lateral and a lower medial part","A lateral and a medial part","An upper medial and a lower lateral part","An anterior and a posterior part"],"why":"Upper quadrangular area + oblique ridge = upper lateral (UL) and lower medial (LM). Lower triangular area + longitudinal ridge = lateral (L) and medial (M).","ref":"p.4","pic":null,"id":11},{"t":"m","lv":"m","sec":"Femur","stem":"Front of the femur. Identify the bump at the arrow.","o":["Lesser trochanter","Greater trochanter","Adductor tubercle","Fovea capitis"],"why":"At the top of the shaft, the small bump on the medial side (same side as the head) is the lesser trochanter. The big one on the lateral side is the greater trochanter.","ref":"p.5","pic":{"src":"img/femA.jpg","w":351,"h":900,"a":[[216.2,192.4,"r"]]},"id":12},{"t":"m","lv":"h","sec":"Femur","stem":"Front of the femur, lower end. Identify the small bump at the arrow.","o":["Adductor tubercle","Medial epicondyle","Lateral epicondyle","Medial condyle"],"why":"On the medial side, just above the medial epicondyle, is the small adductor tubercle.","ref":"p.5","pic":{"src":"img/femA.jpg","w":351,"h":900,"a":[[301.9,724.5,"r"]]},"id":13},{"t":"m","lv":"m","sec":"Femur","stem":"Back of the femur. Identify the rough area at the arrow.","o":["Gluteal tuberosity","Quadrate tubercle","Linea aspera","Intertrochanteric crest"],"why":"On the back of the upper shaft, on the lateral side under the greater trochanter, is the gluteal tuberosity. It runs down into the linea aspera.","ref":"p.5","pic":{"src":"img/femP.jpg","w":300,"h":840,"a":[[196.0,240.0,"r"]]},"id":14},{"t":"m","lv":"h","sec":"Femur","stem":"Back of the femur. Identify the small bump at the arrow.","o":["Quadrate tubercle","Intertrochanteric crest","Lesser trochanter","Gluteal tuberosity"],"why":"Back of the femur: the intertrochanteric crest joins the two trochanters, and the small bump on the middle of that crest is the quadrate tubercle.","ref":"p.5–6","pic":{"src":"img/femP.jpg","w":300,"h":840,"a":[[168.0,186.0,"r"]]},"id":15},{"t":"w","lv":"m","sec":"Femur","stem":"Back of the femur.","parts":[["Name the ridge at the arrow.",["linea aspera"]]],"why":"The long rough ridge down the middle of the back of the shaft is the linea aspera (it has a medial and a lateral lip).","ref":"p.5","pic":{"src":"img/femP.jpg","w":300,"h":840,"a":[[157.0,380.0,"l"]]},"id":16},{"t":"m","lv":"e","sec":"Tibia & fibula","stem":"Identify the bone at the arrow.","o":["Patella","Tibia","Fibula","Femur"],"why":"The small bone in front of the knee joint is the patella (knee cap).","ref":"p.2","pic":{"src":"img/skel.jpg","w":453,"h":772,"a":[[224.0,402.0,"r"]]},"id":17},{"t":"m","lv":"e","sec":"Tibia & fibula","stem":"Front of the tibia and fibula. Identify the bump at the arrow.","o":["Tibial tuberosity","Intercondylar eminence","Medial condyle","Anterior border"],"why":"The bump on the front of the upper tibia, under the condyles, is the tibial tuberosity.","ref":"p.6","pic":{"src":"img/tib.jpg","w":410,"h":852,"a":[[298.0,184.0,"r"]]},"id":18},{"t":"m","lv":"m","sec":"Tibia & fibula","stem":"Identify the structure at the arrow.","o":["Lateral malleolus","Medial malleolus","Distal tibiofibular joint","Talus"],"why":"The lower end of the fibula is the lateral malleolus. The lower end of the tibia (other side) is the medial malleolus.","ref":"p.6","pic":{"src":"img/tib.jpg","w":410,"h":852,"a":[[150.0,805.0,"l"]]},"id":19},{"t":"w","lv":"h","sec":"Tibia & fibula","stem":"Front of the tibia and fibula.","parts":[["Name structure 1.",["intercondylar eminence","intercondylar"]],["Name structure 2.",["interosseous membrane","interosseus membrane"]]],"why":"1 is the raised part on top of the tibia between the two condyles = intercondylar eminence. 2 is the sheet joining the tibia and fibula = interosseous membrane.","ref":"p.6","pic":{"src":"img/tib.jpg","w":410,"h":852,"a":[[255.0,112.0,"t"],[230.0,430.0,"r",150.0]]},"id":20},{"t":"m","lv":"e","sec":"Foot","stem":"How many tarsal bones are there in one foot?","o":["7","5","8","14"],"why":"One foot = 7 tarsals, 5 metatarsals, 14 phalanges.","ref":"p.7","pic":null,"id":21},{"t":"m","lv":"m","sec":"Foot","stem":"Bones of the foot. Identify the bone at the arrow.","o":["Cuboid","Navicular","Lateral cuneiform","Talus"],"why":"On the lateral side of the foot, in front of the calcaneus, is the cuboid. The navicular is on the medial side, in front of the talus.","ref":"p.7","pic":{"src":"img/foot.jpg","w":460,"h":740,"a":[[302.0,505.0,"r"]]},"id":22},{"t":"w","lv":"m","sec":"Foot","stem":"Bones of the foot.","parts":[["Name bone 1.",["talus"]],["Name bone 2.",["navicular"]]],"why":"1 is the talus (sits on the calcaneus, under the tibia). 2 is the navicular, in front of the talus on the medial side.","ref":"p.7","pic":{"src":"img/foot.jpg","w":460,"h":740,"a":[[210.0,585.0,"r"],[148.0,505.0,"l"]]},"id":23},{"t":"m","lv":"e","sec":"Front of thigh","stem":"What is the nerve supply of rectus femoris?","o":["Femoral nerve","Obturator nerve","Sciatic nerve (tibial branch)","Superior gluteal nerve"],"why":"Every muscle of the front of the thigh (quadriceps + sartorius) is supplied by the femoral nerve.","ref":"p.8","pic":null,"id":24},{"t":"w","lv":"m","sec":"Front of thigh","stem":"Front of the thigh: one part of quadriceps femoris.","parts":[["Identify the muscle at the arrow.",["vastus intermedius"]],["What is its nerve supply?",["femoral"]]],"why":"This is vastus intermedius (the deepest part of quadriceps). All quadriceps parts: femoral nerve; extend the leg at the knee and stabilise the patella.","ref":"p.8","pic":{"src":"img/vi.jpg","w":643,"h":672,"a":[[145.0,390.0,"l"]]},"id":25},{"t":"m","lv":"m","sec":"Front of thigh","stem":"Identify the muscle at the arrow.","o":["Vastus medialis","Vastus lateralis","Vastus intermedius","Sartorius"],"why":"It lies on the medial side of the femur, above the knee: vastus medialis. Femoral nerve; extends the knee, stabilises the patella.","ref":"p.8","pic":{"src":"img/vm.jpg","w":421,"h":755,"a":[[105.0,440.0,"l"]]},"id":26},{"t":"m","lv":"m","sec":"Front of thigh","stem":"Which is an action of the muscle at the arrow?","o":["Flexion and abduction of the thigh at the hip","Adduction of the thigh","Extension of the hip","Extension of the leg at the knee"],"why":"The long strap crossing the thigh is sartorius: flexion + abduction of the thigh at the hip, and flexion + medial rotation of the leg at the knee. Femoral nerve.","ref":"p.8","pic":{"src":"img/sart.jpg","w":527,"h":691,"a":[[280.0,250.0,"r"]]},"id":27},{"t":"m","lv":"m","sec":"Front of thigh","stem":"All parts of quadriceps femoris extend the leg at the knee. Which one ALSO flexes the thigh at the hip?","o":["Rectus femoris","Vastus lateralis","Vastus intermedius","Vastus medialis"],"why":"Rectus femoris crosses the hip too: it extends the knee and flexes the hip. The three vasti extend the knee and stabilise the patella.","ref":"p.8","pic":null,"id":28},{"t":"w","lv":"m","sec":"Medial thigh","stem":"Medial (adductor) compartment of the thigh.","parts":[["Identify the muscle at the arrow.",["adductor longus"]],["What is its nerve supply?",["obturator","anterior division obturator","obturator anterior division"]]],"why":"This is adductor longus: adduction of the thigh; obturator nerve (anterior division).","ref":"p.9","pic":{"src":"img/addL.jpg","w":384,"h":723,"a":[[118.0,420.0,"l"]]},"id":29},{"t":"m","lv":"m","sec":"Medial thigh","stem":"Which muscle of the medial (adductor) compartment of the thigh is supplied by the FEMORAL nerve?","o":["Pectineus","Gracilis","Adductor longus","Adductor brevis"],"why":"Pectineus is the odd one: femoral nerve. Adductor longus, brevis and gracilis = obturator nerve (anterior division).","ref":"p.9","pic":null,"id":30},{"t":"m","lv":"h","sec":"Medial thigh","stem":"Identify the muscle at the arrow.","o":["Adductor brevis","Adductor longus","Pectineus","Gracilis"],"why":"This is adductor brevis (short, high up in the medial thigh). Action: adduction. Nerve: obturator (anterior division).","ref":"p.9","pic":{"src":"img/addB.jpg","w":408,"h":845,"a":[[118.0,425.0,"l"]]},"id":31},{"t":"w","lv":"h","sec":"Medial thigh","stem":"The muscle in the picture has two parts.","parts":[["Identify the muscle at the arrow.",["adductor magnus"]],["What nerve supplies its hamstring (ischial) part?",["tibial branch sciatic","tibial","sciatic","sciatic tibial","tibial part sciatic","tibial division sciatic"]]],"why":"Adductor magnus: adductor (pubic) part = obturator nerve; hamstring (ischial) part = tibial branch of the sciatic nerve. Actions: adduction, lateral rotation, flexion of the thigh.","ref":"p.9","pic":{"src":"img/addM.jpg","w":375,"h":736,"a":[[105.0,380.0,"l"]]},"id":32},{"t":"w","lv":"m","sec":"Medial thigh","stem":"Medial thigh.","parts":[["Identify the muscle at the arrow.",["gracilis"]],["Give ONE action of this muscle at the knee.",["flexion","flexion knee","knee flexion","flexes knee","flex knee"]]],"why":"The long thin strap on the medial side of the thigh is gracilis: adduction + lateral rotation of the thigh, and flexion of the knee. Obturator nerve (anterior division).","ref":"p.9","pic":{"src":"img/grac.jpg","w":293,"h":482,"a":[[127.0,330.0,"r"]]},"id":33},{"t":"m","lv":"h","sec":"Medial thigh","stem":"Besides adduction, which action do adductor magnus, gracilis and pectineus share?","o":["Lateral rotation of the thigh","Medial rotation of the thigh","Abduction of the thigh","Extension of the hip"],"why":"In your table adductor magnus, gracilis and pectineus all do adduction + lateral rotation of the thigh.","ref":"p.9","pic":null,"id":34},{"t":"m","lv":"e","sec":"Gluteal region","stem":"What is the nerve supply of gluteus maximus?","o":["Inferior gluteal nerve","Superior gluteal nerve","Sciatic nerve","Nerve to quadratus femoris"],"why":"Gluteus maximus = inferior gluteal nerve (L5, S1, S2). Medius, minimus and tensor fascia lata = superior gluteal nerve (L4, L5, S1).","ref":"p.11","pic":null,"id":35},{"t":"m","lv":"m","sec":"Gluteal region","stem":"Which muscle helps you rise from sitting and climb stairs?","o":["Gluteus maximus","Gluteus medius","Piriformis","Rectus femoris"],"why":"Gluteus maximus: powerful extension + lateral rotation of the hip, steadies knee and hip through the iliotibial tract, helps rising from sitting and climbing stairs.","ref":"p.11","pic":null,"id":36},{"t":"m","lv":"m","sec":"Gluteal region","stem":"Gluteus medius and gluteus minimus. Which pair of actions is right?","o":["Abduction and medial rotation of the thigh","Adduction and lateral rotation of the thigh","Extension and lateral rotation of the hip","Flexion and adduction of the thigh"],"why":"Medius and minimus: abduction, medial rotation of the thigh, and they keep the pelvis steady when walking. Superior gluteal nerve.","ref":"p.11","pic":null,"id":37},{"t":"w","lv":"h","sec":"Gluteal region","stem":"Lateral side of the hip and thigh.","parts":[["Identify the muscle at the arrow.",["tensor fascia lata","tensor fascia","tensor fasciae latae"]],["What is its nerve supply?",["superior gluteal"]]],"why":"The short muscle at the front of the lateral hip is tensor fascia lata: flexion + abduction of the thigh; superior gluteal nerve (L4, L5, S1). The long strap crossing to the medial side is sartorius.","ref":"p.11","pic":{"src":"img/tfl.jpg","w":290,"h":767,"a":[[144.0,195.0,"l",110.0]]},"id":38},{"t":"m","lv":"h","sec":"Gluteal region","stem":"The superior gluteal nerve (L4, L5, S1) supplies all of these EXCEPT:","o":["Gluteus maximus","Gluteus medius","Gluteus minimus","Tensor fascia lata"],"why":"Gluteus maximus is the exception: inferior gluteal nerve (L5, S1, S2).","ref":"p.11","pic":null,"id":39},{"t":"w","lv":"h","sec":"Gluteal region","stem":"Short lateral rotator muscles of the hip.","parts":[["Name muscle 1.",["piriformis"]],["What is the nerve supply of muscle 2?",["nerveto quadratus femoris"]]],"why":"1 is the top one, piriformis (nerve to piriformis, S1, S2). 2 is the lowest, quadratus femoris: nerve to quadratus femoris. All of them: lateral rotation of the thigh.","ref":"p.12","pic":{"src":"img/rot.jpg","w":669,"h":857,"a":[[190.0,380.0,"t",150.0],[330.0,560.0,"b",150.0]]},"id":40},{"t":"m","lv":"h","sec":"Gluteal region","stem":"What is the nerve supply of inferior gemellus?","o":["Nerve to quadratus femoris","Nerve to obturator internus","Nerve to piriformis","Inferior gluteal nerve"],"why":"Your notes: superior gemellus = nerve to obturator internus; inferior gemellus = nerve to quadratus femoris.","ref":"p.12","pic":null,"id":41},{"t":"w","lv":"m","sec":"Gluteal region","stem":"Back of the hip.","parts":[["Identify the muscle at the arrow.",["obturator internus"]],["What is its action?",["lateral rotation","lateral rotation thigh","lateral rotator","laterally rotates thigh","external rotation"]]],"why":"This is obturator internus: lateral rotation of the thigh; nerve to obturator internus.","ref":"p.12","pic":{"src":"img/oi.jpg","w":449,"h":700,"a":[[265.0,525.0,"b"]]},"id":42},{"t":"m","lv":"e","sec":"Gluteal region","stem":"Piriformis, obturator internus, the gemelli and quadratus femoris all do the same action. Which?","o":["Lateral rotation of the thigh","Medial rotation of the thigh","Abduction of the thigh","Extension of the knee"],"why":"They are the lateral rotators of the hip: every one of them = lateral rotation of the thigh.","ref":"p.10, p.12","pic":null,"id":43},{"t":"w","lv":"m","sec":"Back of thigh","stem":"Back of the thigh (hamstrings).","parts":[["Identify the muscle at the arrow.",["biceps femoris"]],["What is the nerve supply of its LONG head?",["tibial","tibial branch sciatic","sciatic tibial","tibial part sciatic"]]],"why":"Biceps femoris: long head = tibial nerve (part of sciatic), short head = common peroneal nerve. Actions: flexion of knee, extension of hip, lateral rotation of knee.","ref":"p.13","pic":{"src":"img/bf.jpg","w":512,"h":607,"a":[[275.0,340.0,"r"]]},"id":44},{"t":"m","lv":"m","sec":"Back of thigh","stem":"What is the nerve supply of the SHORT head of biceps femoris?","o":["Common peroneal nerve","Tibial nerve","Obturator nerve","Femoral nerve"],"why":"Biceps femoris: long head = tibial nerve, short head = common peroneal nerve (both from the sciatic).","ref":"p.13","pic":null,"id":45},{"t":"m","lv":"h","sec":"Back of thigh","stem":"Back of the thigh. Identify the muscle at the arrow.","o":["Biceps femoris","Semitendinosus","Semimembranosus","Gracilis"],"why":"The hamstring on the lateral side is biceps femoris. Semitendinosus and semimembranosus are on the medial side.","ref":"p.13","pic":{"src":"img/ham.jpg","w":255,"h":596,"a":[[172.0,225.0,"r",70.0]]},"id":46},{"t":"w","lv":"m","sec":"Back of thigh","stem":"Back of the thigh.","parts":[["Identify the muscle at the arrow.",["semimembranosus"]],["What is its nerve supply?",["sciatic","tibial","tibial branch sciatic","sciatic tibial","tibial part sciatic","tibial division sciatic"]]],"why":"Semimembranosus: flexion of knee, extension of hip, medial rotation of knee; sciatic nerve (tibial branch).","ref":"p.13","pic":{"src":"img/sm.jpg","w":756,"h":873,"a":[[318.0,450.0,"r"]]},"id":47},{"t":"m","lv":"h","sec":"Back of thigh","stem":"Which hamstring muscle LATERALLY rotates the knee?","o":["Biceps femoris","Semitendinosus","Semimembranosus","Adductor magnus"],"why":"Biceps femoris = lateral rotation of the knee. Semitendinosus and semimembranosus = medial rotation of the knee.","ref":"p.13","pic":null,"id":48},{"t":"w","lv":"e","sec":"Front of leg","stem":"Front of the leg.","parts":[["Identify the muscle at the arrow.",["tibialis anterior"]],["What is its nerve supply?",["anterior tibial","deep peroneal"]]],"why":"Tibialis anterior: dorsiflexion of the ankle + inversion (subtalar joint). Anterior tibial nerve (= deep peroneal), like the whole front of the leg.","ref":"p.14","pic":{"src":"img/ta.jpg","w":262,"h":825,"a":[[140.0,300.0,"r"]]},"id":49},{"t":"m","lv":"h","sec":"Front of leg","stem":"Which muscle of the FRONT of the leg EVERTS the foot?","o":["Peroneus tertius","Tibialis anterior","Extensor hallucis longus","Extensor digitorum longus"],"why":"Peroneus tertius = dorsiflexion of the ankle + eversion (subtalar joint). Tibialis anterior and extensor hallucis longus invert.","ref":"p.14","pic":null,"id":50},{"t":"m","lv":"m","sec":"Front of leg","stem":"Front of the leg. Identify the muscle at the arrow.","o":["Extensor digitorum longus","Extensor hallucis longus","Tibialis anterior","Peroneus brevis"],"why":"This is extensor digitorum longus (in front of the leg, lateral to tibialis anterior). Action: dorsiflexion of the ankle. Nerve: anterior tibial.","ref":"p.14","pic":{"src":"img/edl.jpg","w":375,"h":859,"a":[[208.0,440.0,"r"]]},"id":51},{"t":"m","lv":"e","sec":"Front of leg","stem":"Standing on your heels is:","o":["Dorsiflexion","Plantar flexion","Inversion","Eversion"],"why":"Your note: standing on the heels = dorsiflexion; standing on the toes = plantar flexion.","ref":"p.10","pic":null,"id":52},{"t":"w","lv":"m","sec":"Lateral leg","stem":"Lateral side of the leg.","parts":[["Identify the muscle at the arrow.",["peroneus brevis"]],["What is its nerve supply?",["superficial peroneal","musculocutaneous"]]],"why":"This is peroneus brevis (lateral leg, lower down than longus). Eversion + plantar flexion; superficial peroneal nerve (musculocutaneous).","ref":"p.15","pic":{"src":"img/pb.jpg","w":385,"h":623,"a":[[240.0,405.0,"r"]]},"id":53},{"t":"m","lv":"m","sec":"Lateral leg","stem":"What are the actions of peroneus longus?","o":["Eversion and plantar flexion","Inversion and dorsiflexion","Eversion and dorsiflexion","Inversion and plantar flexion"],"why":"Peroneus longus and brevis: eversion + plantar flexion; superficial peroneal nerve.","ref":"p.15","pic":null,"id":54},{"t":"w","lv":"e","sec":"Back of leg","stem":"Back of the leg.","parts":[["Identify the muscle at the arrow.",["gastrocnemius"]],["What is its nerve supply?",["tibial","medial popliteal"]]],"why":"Gastrocnemius: chief plantar flexor, flexes the weight-bearing knee, propels in walking, pumps venous blood. Tibial nerve.","ref":"p.16","pic":{"src":"img/gas.jpg","w":244,"h":900,"a":[[106.6,290.6,"r"]]},"id":55},{"t":"m","lv":"e","sec":"Back of leg","stem":"Which muscle is the CHIEF plantar flexor?","o":["Gastrocnemius","Soleus","Plantaris","Tibialis anterior"],"why":"Your table calls gastrocnemius the chief plantar flexor.","ref":"p.16","pic":null,"id":56},{"t":"m","lv":"h","sec":"Back of leg","stem":"Which muscle fixes the leg on the foot during walking?","o":["Soleus","Gastrocnemius","Plantaris","Popliteus"],"why":"Soleus: plantar flexion, propelling force in walking, venous pumping, and fixation of the leg on the foot during walking. Tibial (medial popliteal) nerve.","ref":"p.16","pic":null,"id":57},{"t":"w","lv":"m","sec":"Back of leg","stem":"Back of the leg.","parts":[["Identify the muscle at the arrow.",["plantaris"]],["Give ONE of its actions.",["flexion","plantar flexion","plantar flexor","flexion knee","knee flexion","flexes knee","flexor ankle"]]],"why":"Plantaris (small belly, very long thin tendon): plantar flexion + flexion of the knee. Tibial nerve.","ref":"p.16","pic":{"src":"img/plan.jpg","w":410,"h":884,"a":[[160.0,240.0,"r"]]},"id":58},{"t":"w","lv":"h","sec":"Back of leg","stem":"Back of the knee.","parts":[["Identify the muscle at the arrow.",["popliteus"]],["What is its main action?",["unlocking knee","unlocking","unlock knee","unlocks knee","unlocking knee joint","medial rotation tibia","initiation flexion knee"]]],"why":"Popliteus: unlocking of the knee joint (starts knee flexion from full extension by rotating the tibia medially). Tibial nerve.","ref":"p.17","pic":{"src":"img/pop.jpg","w":570,"h":868,"a":[[240.0,575.0,"r",170.0]]},"id":59},{"t":"m","lv":"h","sec":"Back of leg","stem":"Deep muscles of the back of the leg. Identify the muscle at the arrow.","o":["Flexor digitorum longus","Flexor hallucis longus","Tibialis posterior","Soleus"],"why":"This is flexor digitorum longus (the deep muscle on the medial side). Plantar flexion of the toes and ankle, inversion, keeps the arch. Posterior tibial nerve.","ref":"p.17","pic":{"src":"img/fdl.jpg","w":320,"h":850,"a":[[118.0,360.0,"r"]]},"id":60},{"t":"w","lv":"m","sec":"Back of leg","stem":"Deep muscles of the back of the leg.","parts":[["Identify the muscle at the arrow.",["flexor hallucis longus"]],["What is its nerve supply?",["posterior tibial","tibial"]]],"why":"This is flexor hallucis longus (the deep muscle on the lateral side). Plantar flexion, flexion of the MTP joint, inversion, keeps the arch of the foot. Posterior tibial nerve.","ref":"p.17","pic":{"src":"img/fhl.jpg","w":380,"h":700,"a":[[75.0,330.0,"r"]]},"id":61}],"vocab":["rectus femoris","vastus lateralis","vastus intermedius","vastus medialis","sartorius","quadriceps femoris","adductor longus","adductor brevis","adductor magnus","gracilis","pectineus","gluteus maximus","gluteus medius","gluteus minimus","tensor fascia lata","piriformis","obturator internus","obturator externus","superior gemellus","inferior gemellus","quadratus femoris","semimembranosus","semitendinosus","biceps femoris","tibialis anterior","extensor digitorum longus","extensor hallucis longus","peroneus tertius","peroneus longus","peroneus brevis","gastrocnemius","soleus","plantaris","popliteus","flexor digitorum longus","tibialis posterior","flexor hallucis longus","iliotibial tract","femoral","obturator","sciatic","tibial","common peroneal","superficial peroneal","deep peroneal","anterior tibial","posterior tibial","medial popliteal","lateral popliteal","superior gluteal","inferior gluteal","nerveto piriformis","nerveto obturator internus","nerveto quadratus femoris","musculocutaneous","saphenous","sural","pudendal","posterior division obturator","flexion","extension","abduction","adduction","medial rotation","lateral rotation","dorsiflexion","plantar flexion","inversion","eversion","extension knee","flexion hip","extension hip","locking knee","medial rotation thigh","stabilize patella","greater sciatic notch","lesser sciatic notch","ischial spine","ischial tuberosity","obturator foramen","acetabulum","acetabular notch","acetabular fossa","lunate surface","iliac crest","anterior superior iliac spine","anterior inferior iliac spine","posterior superior iliac spine","posterior inferior iliac spine","iliac tuberosity","auricular surface","wing ilium","pubic tubercle","pubic crest","obturator crest","superior pubic ramus","inferior pubic ramus","body pubis","ilium","ischium","pubis","head femur","fovea capitis","neck femur","greater trochanter","lesser trochanter","intertrochanteric line","intertrochanteric crest","quadrate tubercle","gluteal tuberosity","linea aspera","adductor tubercle","medial epicondyle","lateral epicondyle","medial condyle","lateral condyle","patellar surface","medial supracondylar line","lateral supracondylar line","soleal line","intercondylar eminence","tibial tuberosity","anterior border","interosseous membrane","proximal tibiofibular joint","distal tibiofibular joint","medial malleolus","lateral malleolus","head fibula","tibia","fibula","femur","patella","talus","calcaneus","navicular","cuboid","medial cuneiform","intermediate cuneiform","lateral cuneiform","metatarsal","phalanx"]};
+const Q = DATA.q, BY = {};
+Q.forEach(q => BY[q.id] = q);
+const LV = { e: 'Easy', m: 'Medium', h: 'Hard' };
+const KEY = 'll-ospe:v1';
+const $ = (s, el = document) => el.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+/* ---------- storage (per device, best effort) ---------- */
+function load() { try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { return {}; } }
+function save() { try { localStorage.setItem(KEY, JSON.stringify(DB)); } catch (e) {} }
+const DB = load();
+DB.prefs = Object.assign({ mode: 'exam', timer: 0, order: 'mix' }, DB.prefs || {});
+let S = DB.cur || null;   // current attempt
+
+/* ---------- seeded shuffles ---------- */
+function rng(seed) { return () => { seed |= 0; seed = seed + 0x6D2B79F5 | 0; let t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+function shuffle(a, r) { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(r() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+const perm = (q) => shuffle([0, 1, 2, 3], rng(S.seed * 31 + q.id * 7919));
+
+/* ---------- written answers: forgiving, but the closest known term wins ---------- */
+const SYN = [[/\bfibularis\b/g, 'peroneus'], [/\bfibular\b/g, 'peroneal'], [/\bfasciae\b/g, 'fascia'], [/\blatae\b/g, 'lata'], [/\btfl\b/g, 'tensor fascia lata'],
+  [/\basis\b/g, 'anterior superior iliac spine'], [/\baiis\b/g, 'anterior inferior iliac spine'], [/\bpsis\b/g, 'posterior superior iliac spine'], [/\bpiis\b/g, 'posterior inferior iliac spine'],
+  [/\bant\b/g, 'anterior'], [/\bpost\b/g, 'posterior'], [/\bsup\b/g, 'superior'], [/\binf\b/g, 'inferior'], [/\bmed\b/g, 'medial'], [/\blat\b/g, 'lateral'], [/\bbr\b/g, 'branch'], [/\bdiv\b/g, 'division'],
+  [/\bplantarflexion\b/g, 'plantar flexion'], [/\bplanter\b/g, 'plantar'], [/\bdorsi flexion\b/g, 'dorsiflexion'], [/\bcalcaneum\b/g, 'calcaneus'],
+  [/\bedl\b/g, 'extensor digitorum longus'], [/\behl\b/g, 'extensor hallucis longus'], [/\bfdl\b/g, 'flexor digitorum longus'], [/\bfhl\b/g, 'flexor hallucis longus'],
+  [/\b(nerve|nerves|n) (to|for|of) /g, 'nerveto '], [/\bunlocks?\b/g, 'unlocking'], [/\bflexes\b/g, 'flexion'], [/\bflex\b/g, 'flexion'], [/\bstabili[sz]\w*/g, 'stabilize'],
+  [/\bexternal rotation\b/g, 'lateral rotation'], [/\binternal rotation\b/g, 'medial rotation']];
+const STOP = new Set('the a an of muscle muscles m nerve nerves n bone its it is this by supply supplied supplies called named its'.split(' '));
+function norm(s) {
+  s = String(s || '').toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g, '').replace(/[’'`]/g, '').replace(/[^a-z0-9]+/g, ' ').trim();
+  for (const [a, b] of SYN) s = s.replace(a, b);
+  return s.split(' ').filter(w => w && !STOP.has(w)).join(' ');
+}
+const tok = s => s.split(' ').sort().join(' ');
+function lev(a, b) {
+  const m = a.length, n = b.length; if (!m || !n) return m || n;
+  let p = Array.from({ length: n + 1 }, (_, j) => j);
+  for (let i = 1; i <= m; i++) { const c = [i]; for (let j = 1; j <= n; j++) c[j] = Math.min(p[j] + 1, c[j - 1] + 1, p[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1)); p = c; }
+  return p[n];
+}
+const VOCAB = [...new Set(DATA.vocab.map(norm))];
+function score(x, t) {
+  if (x === t || tok(x) === tok(t)) return 0;
+  if ((' ' + x + ' ').includes(' ' + t + ' ')) return 0.5 - t.length / 1000;
+  const d = lev(x, t), r = d / Math.max(t.length, 1);
+  return (r <= 0.25 && d <= 4) ? 1 + r : Infinity;
+}
+function isRight(input, accepted) {
+  const x = norm(input); if (!x) return false;
+  const A = new Set(accepted.map(norm));
+  let best = Infinity, bestOk = false;
+  for (const t of new Set([...A, ...VOCAB])) {
+    const sc = score(x, t);
+    if (sc < best || (sc === best && !A.has(t))) { best = sc; bestOk = A.has(t); }
+  }
+  return best < Infinity && bestOk;
+}
+
+/* ---------- marks ---------- */
+const maxOf = q => q.t === 'm' ? 1 : q.parts.length;
+function partOk(q, p) { const a = (S.ans[q.id] || [])[p]; return !!(S.self[q.id + '-' + p] || isRight(a, q.parts[p][1])); }
+function marksOf(q) {
+  if (q.t === 'm') return S.ans[q.id] === 0 ? 1 : 0;
+  let m = 0; q.parts.forEach((_, p) => { if (partOk(q, p)) m++; }); return m;
+}
+const answered = q => q.t === 'm' ? S.ans[q.id] !== undefined : (S.ans[q.id] || []).some(v => v && v.trim());
+
+/* ---------- arrows ---------- */
+const DIR = { r: [1, 0], l: [-1, 0], t: [0, -1], b: [0, 1], tr: [.71, -.71], tl: [-.71, -.71], br: [.71, .71], bl: [-.71, .71] };
+function drawArrows(box) {
+  const img = $('img', box), svg = $('svg', box), pic = box._pic;
+  if (!img.clientWidth) return;
+  const { w, h, a } = pic, k = w / img.clientWidth;   // picture pixels per screen pixel
+  const NS = 'http://www.w3.org/2000/svg'; svg.setAttribute('viewBox', `0 0 ${w} ${h}`); svg.innerHTML = '';
+  const many = a.length > 1;
+  a.forEach((ar, n) => {
+    const [x, y, d] = ar; const [ux, uy] = DIR[d];
+    let L = Math.max(ar[3] || 0.3 * Math.min(w, h), 46 * k);
+    const m = 0.03 * Math.min(w, h) + (many ? 13 : 4) * k; let s = 1;
+    if (ux > 0) s = Math.min(s, (w - m - x) / (ux * L)); if (ux < 0) s = Math.min(s, (m - x) / (ux * L));
+    if (uy > 0) s = Math.min(s, (h - m - y) / (uy * L)); if (uy < 0) s = Math.min(s, (m - y) / (uy * L));
+    s = Math.max(s, .3);
+    const tx = x + ux * L * s, ty = y + uy * L * s, head = 15 * k, half = 7.5 * k;
+    const bx = x + ux * head, by = y + uy * head, px = -uy, py = ux;
+    const g = document.createElementNS(NS, 'g');
+    g.innerHTML = `<line x1="${tx}" y1="${ty}" x2="${bx}" y2="${by}" stroke="#fff" stroke-width="${7.5 * k}" stroke-linecap="round"/>
+      <polygon points="${x},${y} ${bx + px * half},${by + py * half} ${bx - px * half},${by - py * half}" fill="#fff" stroke="#fff" stroke-width="${4 * k}" stroke-linejoin="round"/>
+      <line x1="${tx}" y1="${ty}" x2="${bx}" y2="${by}" stroke="#111" stroke-width="${3.4 * k}" stroke-linecap="round"/>
+      <polygon points="${x},${y} ${bx + px * half},${by + py * half} ${bx - px * half},${by - py * half}" fill="#111"/>` +
+      (many ? `<circle cx="${tx}" cy="${ty}" r="${12 * k}" fill="#fff" stroke="#111" stroke-width="${2.2 * k}"/>
+      <text x="${tx}" y="${ty}" dy="${4.6 * k}" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-weight="800" font-size="${14 * k}" fill="#111">${n + 1}</text>` : '');
+    svg.appendChild(g);
+  });
+}
+const ro = 'ResizeObserver' in window ? new ResizeObserver(es => es.forEach(e => drawArrows(e.target.closest('.pic')))) : null;
+function picHTML(q) {
+  if (!q.pic) return '';
+  return `<figure><div class="pic" data-pic="${q.id}"><img src="${q.pic.src}" width="${q.pic.w}" height="${q.pic.h}" alt="Station ${q.id} picture" decoding="async"><svg aria-hidden="true"></svg></div></figure><div class="zoomhint">Tap the picture to zoom</div>`;
+}
+function wirePics(root) {
+  root.querySelectorAll('.pic').forEach(box => {
+    const q = BY[box.dataset.pic]; box._pic = q.pic;
+    const img = $('img', box);
+    const go = () => drawArrows(box);
+    if (img.complete) go(); img.addEventListener('load', go);
+    if (ro) ro.observe(img); else addEventListener('resize', go);
+    if (!box.closest('.lb')) box.addEventListener('click', () => openLb(q));
+  });
+}
+function openLb(q) {
+  const L = $('#layer');
+  L.innerHTML = `<div class="lb" role="dialog" aria-label="Zoomed picture"><button class="x" aria-label="Close">✕</button><div class="pic" data-pic="${q.id}"><img src="${q.pic.src}" alt=""><svg aria-hidden="true"></svg></div></div>`;
+  const lb = $('.lb', L);
+  const close = () => { L.innerHTML = ''; };
+  $('.x', lb).onclick = close; $('.pic', lb).onclick = close;
+  wirePics(lb);
+}
+
+/* ---------- screens ---------- */
+const app = $('#app');
+let timerId = null, left = 0;
+function stopTimer() { clearInterval(timerId); timerId = null; $('#clock').hidden = true; }
+
+function startScreen() {
+  stopTimer(); window.scrollTo(0, 0);
+  $('#mapbtn').hidden = true; $('#track').style.width = '0';
+  const P = DB.prefs, cur = S && !S.done;
+  const best = DB.best != null ? `<div class="fact"><b>${DB.best}%</b><small>your best</small></div>` : '';
+  const seg = (k, opts) => `<div class="seg" data-k="${k}">` + opts.map(([v, t, s]) => `<button type="button" data-v="${v}" aria-pressed="${String(P[k]) === String(v)}"><b>${t}</b><small>${s}</small></button>`).join('') + '</div>';
+  app.innerHTML = `<section class="hero">
+    <p class="mono" style="margin:0 0 8px;color:var(--eosin)">Mock exam · Anatomy</p>
+    <h1>Lower Limb <span>OSPE</span></h1>
+    <p>Spot it, name the nerve, give the action. Some are easy, some medium, some really hard. No origins and no insertions.</p>
+    <div class="facts"><div class="fact"><b>61</b><small>stations</small></div><div class="fact"><b>41</b><small>MCQ</small></div><div class="fact"><b>20</b><small>written</small></div><div class="fact"><b>${Q.reduce((a, q) => a + maxOf(q), 0)}</b><small>marks</small></div>${best}</div>
+  </section>
+  <div class="box"><h3>How do you want it?</h3>${seg('mode', [['exam', 'Exam', 'Answers and score at the end'], ['practice', 'Practice', 'See the answer after each station']])}</div>
+  <div class="box"><h3>Station timer</h3>${seg('timer', [[0, 'No timer', 'Take your time'], [60, '1 minute', 'Like the real OSPE'], [90, '1½ minutes', 'A bit more room']])}</div>
+  <div class="box"><h3>Order</h3>${seg('order', [['mix', 'Shuffled', 'Different order every time'], ['region', 'By region', 'Hip bone → thigh → leg']])}
+    <p class="note">Written answers are marked for you and forgive small spelling slips. If you think the app marked you wrong, tap “Count it” in the review.</p></div>
+  <div class="start-actions">
+    ${cur ? `<button class="btn accent" id="resume">Continue: station ${S.i + 1} of ${S.order.length}</button><button class="btn ghost" id="go">Start a new exam</button>` : `<button class="btn accent" id="go">Start the exam</button>`}
+    ${S && S.done ? `<button class="btn ghost" id="last">See my last result</button>` : ''}
+    <button class="btn ghost" id="share">Send it to a friend</button>
+  </div>`;
+  app.querySelectorAll('.seg').forEach(sg => sg.addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    const k = sg.dataset.k, v = b.dataset.v; P[k] = k === 'timer' ? +v : v; save();
+    sg.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b));
+  }));
+  $('#go').onclick = () => { if (cur) { askNew(); return; } newExam(); };
+  if ($('#resume')) $('#resume').onclick = () => { S.mode = P.mode; S.timer = P.timer; save(); station(); };
+  if ($('#last')) $('#last').onclick = results;
+  $('#share').onclick = share;
+}
+function askNew() {
+  dialog('Start a new exam?', 'Your exam in progress will be replaced.', 'Start new', () => newExam());
+}
+function dialog(title, text, okText, ok) {
+  const L = $('#layer');
+  L.innerHTML = `<div class="dialog" role="dialog" aria-modal="true"><div class="dialog-in"><h3>${title}</h3><p>${text}</p><div class="row"><button class="btn ghost" id="dno">Cancel</button><button class="btn accent" id="dok">${okText}</button></div></div></div>`;
+  $('#dno').onclick = () => L.innerHTML = '';
+  $('#dok').onclick = () => { L.innerHTML = ''; ok(); };
+  $('#dok').focus();
+}
+async function share() {
+  const url = location.href.split('#')[0].split('?')[0];
+  const data = { title: 'Lower Limb OSPE', text: 'Lower limb OSPE mock: 61 stations, MCQ + written. Try it:', url };
+  try { if (navigator.share) { await navigator.share(data); return; } } catch (e) { return; }
+  try { await navigator.clipboard.writeText(url); toast('Link copied'); } catch (e) { prompt('Copy this link:', url); }
+}
+function toast(t) { const d = document.createElement('div'); d.textContent = t; d.style.cssText = 'position:fixed;left:50%;bottom:90px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:12px;z-index:50;font-weight:600'; document.body.appendChild(d); setTimeout(() => d.remove(), 1600); }
+
+function newExam(only) {
+  const P = DB.prefs, seed = (Math.random() * 1e9) | 0;
+  let ids = only || Q.map(q => q.id);
+  if (P.order === 'mix') ids = shuffle(ids, rng(seed));
+  S = DB.cur = { seed, mode: P.mode, timer: P.timer, order: ids, i: 0, ans: {}, checked: {}, self: {}, done: false, full: !only, at: Date.now() };
+  save(); station();
+}
+
+function stationHTML(q, review) {
+  const shown = review || (S.mode === 'practice' && S.checked[q.id]);
+  let body = '';
+  if (q.t === 'm') {
+    const pm = perm(q), mine = S.ans[q.id];
+    body = '<div class="opts">' + pm.map((o, i) => {
+      let cls = '';
+      if (shown) cls = o === 0 ? 'right' : (mine === o ? 'wrong' : '');
+      return `<button class="opt ${cls}" data-o="${o}" aria-pressed="${mine === o}" ${shown ? 'disabled' : ''}><span class="k">${'ABCD'[i]}</span><span>${esc(q.o[o])}</span></button>`;
+    }).join('') + '</div>';
+  } else {
+    const mine = S.ans[q.id] || [];
+    body = '<div class="parts">' + q.parts.map((p, i) => {
+      const ok = shown ? partOk(q, i) : null;
+      const lab = q.parts.length > 1 ? 'ab'[i] : '✎';
+      let v = '';
+      if (shown) {
+        v = `<div class="verdict">${ok ? '<span class="ok">✓ Right</span>' : '<span class="bad">✗</span> Answer: <b>' + esc(cap(p[1][0])) + '</b>'}` +
+          (!ok && mine[i] && mine[i].trim() ? ` <button class="linkbtn" data-self="${q.id}-${i}">Count it — I was right</button>` : '') +
+          (ok && S.self[q.id + '-' + i] ? ` <button class="linkbtn" data-unself="${q.id}-${i}">Undo “count it”</button>` : '') + '</div>';
+      }
+      return `<div class="part ${shown ? (ok ? 'ok' : 'bad') : ''}"><label for="in${q.id}-${i}"><span class="pn">${lab}</span><span>${esc(p[0])}</span></label>
+        <input id="in${q.id}-${i}" data-p="${i}" value="${esc(mine[i] || '')}" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="${i < q.parts.length - 1 ? 'next' : 'done'}" ${shown ? 'readonly' : ''} placeholder="${shown ? '(no answer)' : 'Type your answer'}">${v}</div>`;
+    }).join('') + '</div>';
+  }
+  let why = '';
+  if (shown) {
+    const m = marksOf(q), full = m === maxOf(q);
+    why = `<div class="why ${full ? 'ok' : 'bad'}"><b class="t">${full ? 'Right' : m ? 'Partly right' : (answered(q) ? 'Not quite' : 'Not answered')}${q.t === 'm' ? ': ' + esc(q.o[0]) : ''}</b>${esc(q.why)}<div class="ref">Your lower limb notes, ${esc(q.ref)}</div></div>`;
+  }
+  return `<div class="meta"><span class="num">${review ? 'Station ' + (S.order.indexOf(q.id) + 1) : ''}</span><span class="chip ${q.lv}">${LV[q.lv]}</span><span class="chip">${q.t === 'm' ? 'MCQ' : 'Written'}</span><span class="chip">${esc(q.sec)}</span></div>
+    <h2 class="stem">${esc(q.stem)}</h2>${picHTML(q)}${body}${why}`;
+}
+const cap = s => s.replace(/\bnerveto\b/, 'nerve to').replace(/^./, c => c.toUpperCase());
+
+function station() {
+  window.scrollTo(0, 0); $('#layer').innerHTML = '';
+  const q = BY[S.order[S.i]], last = S.i === S.order.length - 1;
+  const checked = S.mode === 'practice' && S.checked[q.id];
+  $('#mapbtn').hidden = false; $('#mapbtn').textContent = `${S.i + 1} / ${S.order.length}`;
+  $('#track').style.width = (100 * S.order.filter(id => answered(BY[id])).length / S.order.length) + '%';
+  app.innerHTML = `<section class="station" aria-live="polite">${stationHTML(q)}</section>
+    <div class="dock"><div class="wrap">
+      <button class="btn ghost back" id="prev" ${S.i ? '' : 'disabled'} aria-label="Previous station">←</button>
+      ${S.mode === 'practice' && q.t === 'w' && !checked ? '<button class="btn accent" id="check">Check</button>' : ''}
+      <button class="btn ${S.mode === 'practice' && q.t === 'w' && !checked ? 'ghost' : 'accent'}" id="next">${last ? 'Finish' : 'Next →'}</button>
+    </div></div>`;
+  wirePics(app);
+  app.querySelectorAll('.opt').forEach(b => b.onclick = () => {
+    S.ans[q.id] = +b.dataset.o;
+    if (S.mode === 'practice') S.checked[q.id] = true;
+    save(); refresh(q);
+  });
+  app.querySelectorAll('input[data-p]').forEach(inp => {
+    inp.oninput = () => { const a = S.ans[q.id] = S.ans[q.id] || []; a[+inp.dataset.p] = inp.value; save(); };
+    inp.onkeydown = e => { if (e.key === 'Enter') { e.preventDefault(); const nx = app.querySelector(`input[data-p="${+inp.dataset.p + 1}"]`); if (nx) nx.focus(); else inp.blur(); } };
+  });
+  wireSelf(app, () => refresh(q));
+  if ($('#check')) $('#check').onclick = () => { S.checked[q.id] = true; save(); refresh(q); };
+  $('#prev').onclick = () => { if (S.i) { S.i--; save(); station(); } };
+  $('#next').onclick = () => next();
+  startTimer(q);
+}
+function refresh(q) {
+  const keep = window.scrollY;
+  const sec = $('.station', app); sec.innerHTML = stationHTML(q); wirePics(sec);
+  // re-wire handlers on the redrawn part
+  sec.querySelectorAll('.opt').forEach(b => b.onclick = () => { S.ans[q.id] = +b.dataset.o; if (S.mode === 'practice') S.checked[q.id] = true; save(); refresh(q); });
+  sec.querySelectorAll('input[data-p]').forEach(inp => { inp.oninput = () => { const a = S.ans[q.id] = S.ans[q.id] || []; a[+inp.dataset.p] = inp.value; save(); }; });
+  wireSelf(sec, () => refresh(q));
+  const chk = $('#check'); if (chk && S.checked[q.id]) { chk.remove(); $('#next').className = 'btn accent'; }
+  $('#track').style.width = (100 * S.order.filter(id => answered(BY[id])).length / S.order.length) + '%';
+  window.scrollTo(0, keep);
+  if (S.mode === 'practice' && S.checked[q.id]) { const w = $('.why', sec); if (w && w.getBoundingClientRect().top > innerHeight - 120) w.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+}
+function wireSelf(root, after) {
+  root.querySelectorAll('[data-self]').forEach(b => b.onclick = () => { S.self[b.dataset.self] = true; save(); after(); });
+  root.querySelectorAll('[data-unself]').forEach(b => b.onclick = () => { delete S.self[b.dataset.unself]; save(); after(); });
+}
+function next() {
+  const q = BY[S.order[S.i]];
+  if (S.mode === 'practice' && q.t === 'w' && !S.checked[q.id] && answered(q)) { S.checked[q.id] = true; save(); refresh(q); return; }
+  if (S.i < S.order.length - 1) { S.i++; save(); station(); return; }
+  const miss = S.order.filter(id => !answered(BY[id])).length;
+  if (miss) dialog('Finish the exam?', `${miss} station${miss > 1 ? 's are' : ' is'} not answered yet.`, 'Finish', finish);
+  else finish();
+}
+function startTimer(q) {
+  stopTimer();
+  if (!S.timer || (S.mode === 'practice' && S.checked[q.id])) return;
+  left = S.timer; const c = $('#clock'); c.hidden = false;
+  const show = () => { c.textContent = '⏱ ' + Math.floor(left / 60) + ':' + String(left % 60).padStart(2, '0'); c.classList.toggle('low', left <= 10); };
+  show();
+  timerId = setInterval(() => {
+    if (document.hidden) return;
+    left--; show();
+    if (left <= 0) {
+      stopTimer();
+      if (S.mode === 'practice') { S.checked[q.id] = true; save(); station(); toast('Time’s up'); }
+      else { toast('Time’s up'); next(); }
+    }
+  }, 1000);
+}
+
+function openMap() {
+  const L = $('#layer'), cur = S.order[S.i];
+  L.innerHTML = `<div class="sheet" role="dialog" aria-label="All stations"><div class="sheet-in"><h3>All stations <button class="x" aria-label="Close">✕</button></h3>
+    <div class="grid">${S.order.map((id, i) => {
+      const q = BY[id]; let c = answered(q) ? 'done' : '';
+      if (S.mode === 'practice' && S.checked[id]) c = marksOf(q) === maxOf(q) ? 'r' : 'w';
+      return `<button class="${c} ${id === cur ? 'cur' : ''}" data-i="${i}" aria-label="Station ${i + 1}">${i + 1}</button>`;
+    }).join('')}</div>
+    <div class="legend"><span>■ answered</span><span>□ not yet</span>${S.mode === 'practice' ? '<span style="color:var(--ok)">■ right</span><span style="color:var(--bad)">■ wrong</span>' : ''}</div>
+    <div class="row" style="margin-top:16px"><button class="btn ghost" id="mhome">Exam settings</button><button class="btn accent" id="mfin">Finish now</button></div></div></div>`;
+  const close = () => L.innerHTML = '';
+  $('.sheet', L).onclick = e => { if (e.target.classList.contains('sheet')) close(); };
+  $('.x', L).onclick = close;
+  L.querySelectorAll('.grid button').forEach(b => b.onclick = () => { S.i = +b.dataset.i; save(); close(); station(); });
+  $('#mhome').onclick = () => { close(); startScreen(); };
+  $('#mfin').onclick = () => { close(); const miss = S.order.filter(id => !answered(BY[id])).length; if (miss) dialog('Finish the exam?', `${miss} station${miss > 1 ? 's are' : ' is'} not answered yet.`, 'Finish', finish); else finish(); };
+}
+$('#mapbtn').onclick = () => S && openMap();
+$('#home').onclick = () => { $('#layer').innerHTML = ''; startScreen(); };
+
+function finish() {
+  stopTimer(); S.done = true;
+  const got = S.order.reduce((a, id) => a + marksOf(BY[id]), 0), max = S.order.reduce((a, id) => a + maxOf(BY[id]), 0);
+  if (S.full) { const pc = Math.round(100 * got / max); DB.best = Math.max(DB.best || 0, pc); }
+  save(); results();
+}
+function results(filter) {
+  stopTimer(); window.scrollTo(0, 0); $('#layer').innerHTML = '';
+  $('#mapbtn').hidden = true; $('#track').style.width = '100%';
+  filter = filter || 'all';
+  const qs = S.order.map(id => BY[id]);
+  const got = qs.reduce((a, q) => a + marksOf(q), 0), max = qs.reduce((a, q) => a + maxOf(q), 0), pc = Math.round(100 * got / max);
+  const grp = (f) => { const g = qs.filter(f); return [g.reduce((a, q) => a + marksOf(q), 0), g.reduce((a, q) => a + maxOf(q), 0)]; };
+  const bar = (name, [a, b], col) => b ? `<div class="barrow"><span>${name}</span><div class="b"><i style="width:${100 * a / b}%;background:${col}"></i></div><span>${a} / ${b}</span></div>` : '';
+  const msg = pc >= 90 ? 'Excellent. You are ready.' : pc >= 75 ? 'Good work. Fix the red ones below.' : pc >= 50 ? 'Getting there. Review the wrong ones and try again.' : 'Keep going. Practice mode shows the answer after each station.';
+  const wrong = qs.filter(q => marksOf(q) < maxOf(q));
+  const list = qs.filter(q => filter === 'all' || (filter === 'wrong' ? marksOf(q) < maxOf(q) : q.lv === filter));
+  app.innerHTML = `<section class="res">
+    <div class="score"><div class="ring" style="--p:${pc}"><div>${pc}%</div></div>
+      <div><h1>${got} / ${max} marks</h1><p>${msg}</p>${S.full ? '' : '<p>(This round had only the stations you got wrong.)</p>'}</div></div>
+    <div class="bars">${bar('Easy', grp(q => q.lv === 'e'), 'var(--e)')}${bar('Medium', grp(q => q.lv === 'm'), 'var(--m)')}${bar('Hard', grp(q => q.lv === 'h'), 'var(--h)')}
+      ${bar('MCQ', grp(q => q.t === 'm'), 'var(--hema)')}${bar('Written', grp(q => q.t === 'w'), 'var(--hema)')}</div>
+    <div class="row" style="margin-top:18px">${wrong.length ? `<button class="btn accent" id="redo">Redo the ${wrong.length} I got wrong</button>` : ''}<button class="btn ghost" id="again">New exam</button><button class="btn ghost" id="share2">Send to a friend</button></div>
+    <div class="filters" role="group" aria-label="Show">${[['all', 'All'], ['wrong', 'Wrong'], ['e', 'Easy'], ['m', 'Medium'], ['h', 'Hard']].map(([v, t]) => `<button data-f="${v}" aria-pressed="${filter === v}">${t}</button>`).join('')}</div>
+    <div class="list">${list.map(q => {
+      const m = marksOf(q), mx = maxOf(q), c = m === mx ? 'r' : m ? 'p' : 'w';
+      return `<div class="item" data-id="${q.id}"><button aria-expanded="false"><span class="mark ${c}">${c === 'r' ? '✓' : c === 'p' ? '½' : '✗'}</span><span class="s"><b>${S.order.indexOf(q.id) + 1}.</b> ${esc(q.stem)}</span><span class="pts">${m}/${mx}</span></button><div class="body" hidden></div></div>`;
+    }).join('') || '<p class="note">Nothing here.</p>'}</div>
+    <footer>Made from the lower limb notes · marks are kept on this phone only</footer></section>`;
+  app.querySelectorAll('.item > button').forEach(b => b.onclick = () => {
+    const it = b.parentElement, body = $('.body', it), q = BY[it.dataset.id], open = body.hidden;
+    body.hidden = !open; b.setAttribute('aria-expanded', open);
+    if (open) { body.innerHTML = `<div class="station">${stationHTML(q, true)}</div>`; wirePics(body); wireSelf(body, () => { save(); const y = scrollY; results(filter); window.scrollTo(0, y); const again = app.querySelector(`.item[data-id="${q.id}"] > button`); if (again) again.click(); }); }
+  });
+  app.querySelectorAll('.filters button').forEach(b => b.onclick = () => results(b.dataset.f));
+  if ($('#redo')) $('#redo').onclick = () => newExam(wrong.map(q => q.id));
+  $('#again').onclick = () => newExam();
+  $('#share2').onclick = share;
+}
+
+document.addEventListener('keydown', e => {
+  if (!S || S.done || $('#layer').innerHTML || !$('.station', app) || $('.res', app)) return;
+  if (e.target.matches('input')) return;
+  const k = e.key.toLowerCase(), i = 'abcd'.indexOf(k) >= 0 ? 'abcd'.indexOf(k) : '1234'.indexOf(k);
+  const opts = app.querySelectorAll('.opt');
+  if (i >= 0 && opts[i] && !opts[i].disabled) { opts[i].click(); e.preventDefault(); }
+  else if (e.key === 'Enter' || e.key === 'ArrowRight') { $('#next') && $('#next').click(); e.preventDefault(); }
+  else if (e.key === 'ArrowLeft') { $('#prev') && !$('#prev').disabled && $('#prev').click(); }
+});
+
+startScreen();
+</script>
+</body>
+</html>
