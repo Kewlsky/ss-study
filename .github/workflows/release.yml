@@ -1,0 +1,26 @@
+# When the app's version code (version.json "apk") changes, publish it as a GitHub release "build-<apk>" with
+# SS-Study.apk attached. get.html sends the app's "New app version" button there, so GitHub counts the downloads.
+name: Release the new app version
+on:
+  push:
+    branches: [main]
+permissions:
+  contents: write
+concurrency:
+  group: release
+  cancel-in-progress: false
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Release a new app version
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          APK=$(python3 -c "import json; print(json.load(open('version.json'))['apk'])")
+          NAME=$(python3 -c "import json; print(json.load(open('version.json')).get('name', ''))")
+          if gh release view "build-$APK" > /dev/null 2>&1; then echo "build $APK is already released"; exit 0; fi
+          gh release create "build-$APK" SS-Study.apk --target "$GITHUB_SHA" --latest \
+            --title "SS Study $NAME (build $APK)" --notes "Install it over the old app: your progress stays."

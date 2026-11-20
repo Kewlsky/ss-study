@@ -1,0 +1,20 @@
+# When a message (or a new ringtone) lands in this repo, push it to every phone with the app (Firebase topic "all").
+# The Firebase key is the repository secret FCM_SERVICE_ACCOUNT: encrypted, never shown, not in any file here.
+name: Push to phones
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+concurrency:
+  group: push
+  cancel-in-progress: false
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Send the new messages
+        env:
+          FCM_SERVICE_ACCOUNT: ${{ secrets.FCM_SERVICE_ACCOUNT }}
+        run: python3 .github/push.py
